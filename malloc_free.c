@@ -20,3 +20,26 @@ int main(void)
  *hello
  *hello
  */
+
+
+/*free 非malloc、calloc、realloc分配的内存*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    char *p = NULL;
+
+    char buf[20];
+    int n = 21;
+
+    if (n >= sizeof(buf)) {
+        p = malloc(n);
+    } else {
+        p = buf;
+    }
+
+    free(p); //这里不会报错，但通常却会破坏内存管理的数据结构，而且直到以后才能发现。
+
+    return 0;
+}
