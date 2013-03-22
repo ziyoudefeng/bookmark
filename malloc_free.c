@@ -1,5 +1,5 @@
+// 1
 /*调用free之后，悬挂指针未赋值为NULL的情况。*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,7 +21,7 @@ int main(void)
  *hello
  */
 
-
+// 2
 /*free 非malloc、calloc、realloc分配的内存*/
 #include <stdio.h>
 #include <stdlib.h>
