@@ -43,3 +43,26 @@ int main(void)
 
     return 0;
 }
+
+// 3
+/*返回局部变量，不会报错*/
+#include <stdio.h>
+#include <stdlib.h>
+
+char *i2a(int n)
+{
+    char buf[43];
+
+    sprintf(buf, "%d", n);
+    return buf; // buf为局部变量
+}
+
+int main(void)
+{
+    int i = 125;
+    char *s = i2a(i);
+    printf("%d\t%s", i, s); //可以运行，不过就是返回的值不对而已。
+
+    return 0;
+}
+
